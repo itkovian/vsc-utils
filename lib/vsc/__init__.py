@@ -26,7 +26,6 @@
 """
 @author: Jens Timmerman (Ghent University)
 """
-from pkgutil import extend_path
+import pkg_resources
 
-# we're not the only ones in this namespace
-__path__ = extend_path(__path__, __name__)  #@ReservedAssignment
+pkg_resources.declare_namespace(__name__)

@@ -1,0 +1,29 @@
+[project]
+name = "vsc-utils"
+version = "3.0.0"
+description = "VSC utilities"
+authors = [
+    {name = "Andy Georges",email = "andy.georges@ugent.be"}
+]
+license = {text = "GPLv2"}
+readme = "README.md"
+requires-python = ">=3.9,<4.0"
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+lockfile = "0.12.2"
+netifaces2 = "0.0.22"
+jsonpickle = "4.1.1"
+vsc-base = { git = "git@github.com:itkovian/vsc-base.git", rev = "4f52f5354fe1600e3361c0b501a592fe731e8406"}
+
+
+[tool.poetry]
+packages = [
+    {include="vsc", from="src"}
+]
+
+[tool.poetry.scripts]

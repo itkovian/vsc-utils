@@ -17,6 +17,10 @@ var
 sdist
 develop-eggs
 .installed.cfg
+wheelhouse
+buildroot
+requirements.txt
+*.lock
 
 # Installer logs
 pip-log.txt

@@ -1,29 +1,27 @@
 [project]
 name = "vsc-utils"
 version = "3.0.0"
-description = "VSC utilities"
-authors = [
-    {name = "Andy Georges",email = "andy.georges@ugent.be"}
-]
-license = {text = "GPLv2"}
+description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.9,<4.0"
-
+authors = [
+    { name = "Andy Georges", email = "itkovian@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "vsc-base",
+    "lockfile == 0.12.2",
+    "netifaces2 == 0.0.22",
+    "jsonpickle == 4.1.1",
+]
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
 
-[tool.poetry.dependencies]
-lockfile = "0.12.2"
-netifaces2 = "0.0.22"
-jsonpickle = "4.1.1"
-vsc-base = { git = "git@github.com:itkovian/vsc-base.git", branch = "poetry"}
+[tool.hatch.build.targets.wheel]
+packages = ["src/vsc"]
 
+[project.scripts]
 
-[tool.poetry]
-packages = [
-    {include="vsc", from="src"}
-]
-
-[tool.poetry.scripts]
+[tool.uv.sources]
+vsc-base = { git = "https://github.com/itkovian/vsc-base.git", branch = "uv"}

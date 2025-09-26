@@ -18,7 +18,7 @@ build-backend = "poetry.core.masonry.api"
 lockfile = "0.12.2"
 netifaces2 = "0.0.22"
 jsonpickle = "4.1.1"
-vsc-base = { git = "git@github.com:itkovian/vsc-base.git", rev = "4f52f5354fe1600e3361c0b501a592fe731e8406"}
+vsc-base = { git = "git@github.com:itkovian/vsc-base.git", branch = "poetry"}
 
 
 [tool.poetry]

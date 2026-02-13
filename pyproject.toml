@@ -24,4 +24,4 @@ packages = ["src/vsc"]
 [project.scripts]
 
 [tool.uv.sources]
-vsc-base = { git = "https://github.com/itkovian/vsc-base.git", branch = "uv"}
+vsc-base = { git = "https://github.com/itkovian/vsc-base.git", branch = "uv-package-only"}

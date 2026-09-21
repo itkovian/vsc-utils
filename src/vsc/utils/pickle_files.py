@@ -1,5 +1,5 @@
 #
-# Copyright 2012-2025 Ghent University
+# Copyright 2012-2026 Ghent University
 #
 # This file is part of vsc-utils,
 # originally created by the HPC team of Ghent University (http://ugent.be/hpc/en),
@@ -40,6 +40,7 @@ import os
 import stat
 import pickle
 
+
 class TimestampPickle:
     """Stores a timestamp in some format in a file."""
 
@@ -57,7 +58,7 @@ class TimestampPickle:
         """
 
         try:
-            with open (self.filename, "rb") as fih:
+            with open(self.filename, "rb") as fih:
                 timestamp = pickle.load(fih)
         except (OSError, FileNotFoundError):
             logging.exception("Failed to load timestamp pickle from filename %s.", self.filename)

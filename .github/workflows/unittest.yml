@@ -2,8 +2,42 @@
 # This file was automatically generated using 'python -m vsc.install.ci'
 # DO NOT EDIT MANUALLY
 jobs:
+  python_ruff_check:
+    runs-on: ubuntu-24.04
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{matrix.python}}
+    - name: install ruff
+      run: pip install 'ruff==0.15.1'
+    - name: Run ruff
+      run: ruff check .
+    strategy:
+      matrix:
+        python:
+        - 3.9
+  python_ruff_format:
+    runs-on: ubuntu-24.04
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{matrix.python}}
+    - name: install ruff
+      run: pip install 'ruff==0.15.1'
+    - name: Run ruff format
+      run: ruff format --check .
+    strategy:
+      matrix:
+        python:
+        - 3.9
   python_unittests:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -12,7 +46,7 @@ jobs:
       with:
         python-version: ${{ matrix.python }}
     - name: install tox
-      run: pip install 'virtualenv<20.22.0' 'tox<4.5.0'
+      run: pip install 'virtualenv' 'tox'
     - name: add mandatory git remote
       run: git remote add hpcugent https://github.com/hpcugent/vsc-utils.git
     - name: Run tox
@@ -20,7 +54,6 @@ jobs:
     strategy:
       matrix:
         python:
-        - 3.6
         - 3.9
 name: run python tests
 'on':

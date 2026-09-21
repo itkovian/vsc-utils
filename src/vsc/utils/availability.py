@@ -1,5 +1,5 @@
 #
-# Copyright 2012-2025 Ghent University
+# Copyright 2012-2026 Ghent University
 #
 # This file is part of vsc-utils,
 # originally created by the HPC team of Ghent University (http://ugent.be/hpc/en),
@@ -44,7 +44,7 @@ def proceed_on_ha_service(host_ip):
 
     machine_addresses = []
     for iface_name in interfaces():
-        addresses = [i['addr'] for i in ifaddresses(iface_name).setdefault(AF_INET, [{'addr': None}]) if i['addr']]
+        addresses = [i["addr"] for i in ifaddresses(iface_name).setdefault(AF_INET, [{"addr": None}]) if i["addr"]]
         machine_addresses.extend(addresses)
 
     return host_ip in machine_addresses

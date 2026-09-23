@@ -28,7 +28,7 @@ Unit tests for vsc.utils.timestamp
 
 @author: Jens Timmerman (Ghent University)
 """
-import mock
+from unittest import mock
 
 from datetime import datetime
 

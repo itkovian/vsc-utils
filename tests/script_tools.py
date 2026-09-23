@@ -34,7 +34,8 @@ import random
 import sys
 import tempfile
 import getpass
-import mock
+
+from unittest import mock
 
 from vsc.install.testing import TestCase
 from vsc.utils.nagios import NAGIOS_EXIT_WARNING

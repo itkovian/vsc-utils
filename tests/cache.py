@@ -36,7 +36,8 @@ import time
 import shutil
 import sys
 import random
-import mock
+
+from unittest import mock
 
 from vsc.install.testing import TestCase
 from vsc.utils.cache import FileCache

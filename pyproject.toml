@@ -26,3 +26,18 @@ only-include = ["src/vsc/utils"]
 
 [tool.uv.sources]
 vsc-base = { git = "https://github.com/itkovian/vsc-base.git", branch = "uv-package-only"}
+
+
+[dependency-groups]
+dev = [
+  "tox",
+  "tox-uv",
+  "pytest>=7.0",
+  "pytest-cov",
+  "setuptools<54.0",
+  "prospector",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["test"]
+python_files = ["*.py"]

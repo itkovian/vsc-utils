@@ -34,7 +34,6 @@ dev = [
   "tox-uv",
   "pytest>=7.0",
   "pytest-cov",
-  "setuptools<54.0",
   "prospector",
 ]
 
